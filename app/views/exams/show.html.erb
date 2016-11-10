@@ -1,0 +1,18 @@
+<div class="container formstyle-2">
+  <h4>
+    <strong>Name:</strong>
+    <%= @exam.name %>
+  </h4>
+  
+  <h4>
+    <strong>Total Marks:</strong>
+    <%= @exam.total_marks %>
+  </h4>
+  &nbsp; &nbsp;
+  <% @candidate_exam_details.each do |candidate_exam_detail| %>
+  <h5><strong> Candidate Name:</strong> <%= candidate_exam_detail.candidate.try(:name) %> </h5>
+  <h5><strong> Marks obtained:</strong> <%= candidate_exam_detail.marks_obtained %> </h5>
+  &nbsp; &nbsp;
+  <% end %>
+</div>
+<h3><%= link_to 'Back', exams_path %> </h3>

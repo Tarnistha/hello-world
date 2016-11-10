@@ -1,0 +1,31 @@
+<div class="container bgcolor">
+  <p id="notice"><%= notice %></p>
+  <h1>Candidate Exam Details of <%= @candidate.try(:name) %></h1>
+  <table>
+    <thead>
+      <tr>
+        <th> Exam Name </th>
+        <th> marks obtained</th>
+        <th> Answer Paper </th>
+        <th> Comment  </th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @candidate_exam_details.each do |candidate_exam_detail| %>
+      <tr>  
+	<td> <%= candidate_exam_detail.exam.try(:name) %></td>
+        <td><%= candidate_exam_detail.marks_obtained %></td>
+	<td><%=  if candidate_exam_detail.image.exists? then link_to "See Image", candidate_exam_detail.image.url(:medium) else "No Image" end %> </td>
+	<td><%= candidate_exam_detail.comment %></td>
+	<td><%= link_to 'Show', candidate_candidate_exam_detail_path(@candidate, candidate_exam_detail) %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= link_to 'Edit', edit_candidate_candidate_exam_detail_path(@candidate, candidate_exam_detail) %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= link_to 'Delete', candidate_candidate_exam_detail_path(@candidate, candidate_exam_detail), method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+</div>
+<h3><%= link_to 'New Details', new_candidate_candidate_exam_detail_path(@candidate) %></h3>
+<h3> Back to:<%= link_to 'Candidate', candidates_path %> </h3>

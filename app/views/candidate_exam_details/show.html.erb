@@ -1,0 +1,27 @@
+<div class="container">
+  <h1><p id="notice"><%= notice %></p></h1>
+  <p align="center">
+    <%= image_tag @candidate_exam_detail.image.url(:medium) %>
+  </p>
+  <p align="center">
+    <strong>marks_obtained:</strong>
+    <%= @candidate_exam_detail.marks_obtained %>
+  </p>
+  <p align="center">
+    <strong>candidate_id:</strong>
+    <%= @candidate_exam_detail.candidate_id %>
+  </p>
+  <p align="center">
+    <strong>exam_id:</strong>
+    <%= @candidate_exam_detail.exam_id %>
+  </p>
+  <p align="center">
+    <strong>Comment:</strong>
+    <%= @candidate_exam_detail.exam_id %>
+  </p>
+  <h3>
+    <%= link_to "Send Mail", send_marks_mail_candidate_candidate_exam_detail_path(@candidate, @candidate_exam_detail) %>
+  </h3>
+</div>
+<h3><%= link_to 'Back', candidate_candidate_exam_details_path %></h3>
+

@@ -1,0 +1,28 @@
+<%= will_paginate @exams %>
+<div class="container bgcolor">
+  <p id="notice"><%= notice %></p>
+  <h1>Exams</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name &nbsp; &nbsp; &nbsp;</th>
+        <th>Total Marks &nbsp; &nbsp; &nbsp;</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exams.each do |exam| %>
+      <tr>
+        <td><%= exam.name %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= exam.total_marks %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= link_to 'Show', exam %> &nbsp; &nbsp;</td>
+        <td><%= link_to 'Edit', edit_exam_path(exam) %> &nbsp; &nbsp;</td>
+        <td><%= link_to 'Delete', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>   
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <h3> <%= link_to 'New Exam', new_exam_path(@candidate) %> </h3>
+</div>
+<%= will_paginate @exams %>

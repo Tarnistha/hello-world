@@ -1,0 +1,35 @@
+<%= will_paginate @candidates %>
+<div class="container bgcolor">
+  <p id="notice"><%= notice %></p>
+  <h1 align="center">Candidates</h1>
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Name &nbsp; &nbsp; &nbsp;</th>
+        <th>Qualification &nbsp; &nbsp; &nbsp;</th>
+        <th>College &nbsp; &nbsp; &nbsp;</th>
+        <th>Stream</th>
+        <th> Email </th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.name %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= candidate.qualification %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= candidate.college %>&nbsp; &nbsp; &nbsp;</td>
+        <td><%= candidate.stream %>&nbsp; &nbsp; &nbsp;</td>
+	<td><%= candidate.email %>&nbsp; &nbsp; &nbsp;</td>
+        <td><%= link_to 'Show', candidate %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= link_to 'Edit', edit_candidate_path(candidate) %> &nbsp; &nbsp; &nbsp;</td>
+        <td><%= link_to 'Delete', candidate, method: :delete, data: { confirm: 'Are you sure?' } %> &nbsp; &nbsp; &nbsp;</td>
+	<td> <%= link_to 'Exam Details', candidate_candidate_exam_details_path(candidate) %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <h4><%= link_to 'New Candidate', new_candidate_path %></h4>
+</div>
+

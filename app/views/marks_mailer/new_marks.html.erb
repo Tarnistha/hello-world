@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Training Program System <%= @candidate.try(:name) %></h1>
+    <p>
+      Your result has been published.<br>
+    </p>
+    <p> You have got <%= @candidate_exam_detail.marks_obtained %> marks </p>
+    <p>And you have <%= @candidate_exam_detail.marks_obtained < 40 ? "failed" : "passed" %> the exam</p>
+    <p>Have a great day! Thank You</p>  
+  </body>
+</html>

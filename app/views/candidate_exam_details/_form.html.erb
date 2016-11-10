@@ -1,0 +1,40 @@
+<%= form_for :candidate_exam_detail, url: candidate_candidate_exam_details_path, html: { multipart: true } do |f| %>
+<% if @candidate_exam_detail.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@candidate_exam_detail.errors.count, "error") %> prohibited this crecord from being saved:</h2>
+  <ul>
+    <% @candidate_exam_detail.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="field" align="center">
+  <%= f.label :image, "Checked Exam Papers" %>
+  <%= f.file_field :image %>
+</div> 
+
+<div class="field">
+  <%= f.label :marks_obtained %>
+  <%= f.number_field :marks_obtained %>
+</div>
+
+<div class="field">
+  <%= f.label :candidate, "Candidate" %>
+  <%= f.collection_select  :candidate_id, Candidate.all, :id, :name, {}, disabled: true %>
+</div>
+
+<div class="field">
+  <%= f.label :exam, "Exam" %>
+  <%= f.collection_select :exam_id, Exam.all, :id, :name, readonly:true %>
+</div>
+
+<div class="field">
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

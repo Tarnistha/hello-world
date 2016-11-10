@@ -1,0 +1,41 @@
+<%= form_for(candidate) do |f| %>
+<% if candidate.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+  <ul>
+    <% candidate.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field" align="center">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="field" align="center">
+  <%= f.label :qualification %>
+  <%= f.select :qualification, ['B.Tech','MCA','BE'] %>  
+</div>
+
+<div class="field" align="center">
+  <%= f.label :college %>
+  <%= f.text_field :college %>
+</div>
+
+<div class="field" align="center">
+  <%= f.label :stream %>
+  <%= f.select :stream, ['EC', 'CS', 'EE', 'IT', 'ME', 'CE'] %>
+</div>
+
+<div class="field" align="center">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</div>
+
+<div class="actions" align="center">
+  <%= f.submit %>
+</div>
+<% end %>

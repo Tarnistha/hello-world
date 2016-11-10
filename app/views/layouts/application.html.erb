@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Training</title>
+       <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track': 'reload' %>
+       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+       <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="bgcolor">
+      <%= render "layouts/navbar" %>
+      <header class="navbar navbar-fixed-top navbar-default navbar-custom">
+	<div class="container">
+          <h4><%= link_to "Training Program System", new_user_session_path %></h4>
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Candidate", candidates_path %></li>
+              <li><%= link_to "Exam", exams_path %> </li>
+	      <% if user_signed_in? %>
+              <li class="toppad"><%= current_user.name %></li>
+              <li >
+		<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+              </li>
+              <% else %>
+              <li>
+              <li ><%= link_to 'Sign up ', new_user_registration_path %></li>
+              <li class="rtpad"><%= link_to 'Log in ', new_user_session_path %></li>
+              </li>
+              <% end %>
+          </nav>
+	</div>
+      </header>
+    </div>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <%= javascript_tag do %>
+      <%= yield :javascript %>
+      <% end %>
+      <div  class="footercolor">
+	<hr>
+	<footer>
+	  <p> © Training Program System </p>
+      </div>
+      </footer>
+    </div>
+  </body>
+</html>

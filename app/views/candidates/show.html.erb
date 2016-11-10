@@ -1,0 +1,50 @@
+<div class="container formstyle-2">
+  <p id="notice"><%= notice %></p>
+  
+  <h4>
+    <strong>Name:</strong>
+    <%= @candidate.name %>
+  </h4>
+
+  <h4>
+    <strong>Qualification:</strong>
+    <%= @candidate.qualification %>
+  </h4>
+  
+  <h4>
+    <strong>College:</strong>
+    <%= @candidate.college %>
+  </h4>
+  
+  <h4>
+    <strong>Stream:</strong>
+    <%= @candidate.stream %>
+  </h4>
+  
+  <h4>
+    <strong>Email:</strong>
+    <%= @candidate.email %>
+  </h4>
+  
+  <div class= "row">
+    <table align="center">
+      <thead>
+        <tr>
+	  <th><h5><strong>Exam</h5></strong></th>
+	  <th><h5><strong>Marks Obtained</h5></strong></th>
+	</tr>
+      </thead>
+      <tbody>
+	<% @candidate_exam_details.each do |candidate_exam_detail| %>
+	<tr>
+          <td align="center"> <%= candidate_exam_detail.exam.try(:name) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	  <td align="center"> <%= candidate_exam_detail.marks_obtained %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+	  <td><strong><%= candidate_exam_detail.marks_obtained < 45 ? "FAILED" : "PASSED" %></h5></strong></td>
+        </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+<h3> Back to:<%= link_to 'Candidate', candidates_path %> </h3> 
+<h4><%= link_to 'Exam Details', candidate_candidate_exam_details_path(@candidate) %></h4>
+</div>

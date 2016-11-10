@@ -1,0 +1,148 @@
+@import "bootstrap-sprockets";
+@import"bootstrap";
+table { 
+border-spacing: 10px;
+border-collapse: separate;
+}
+.bgcolor{
+	background-color:#ffe6f2;
+}
+.navbar-custom {
+    background-color:#ffccff;
+    color:#ffffff;
+    border-radius:0;
+}
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color:transparent;
+}
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+
+.footercolor{
+background-color: ecb3ff;
+}
+
+padd{
+padding-top:20px;
+}
+
+.formstyle{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #cce6ff;
+}
+.formstyle1{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #cce6ff;
+}
+.formstyle h1{
+    background: #0033cc;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+.formstyle input[type="text"],
+.formstyle input[type="date"],
+.formstyle input[type="datetime"],
+.formstyle input[type="email"],
+.formstyle input[type="number"],
+.formstyle input[type="search"],
+.formstyle input[type="time"],
+.formstyle input[type="url"],
+.formstyle textarea,
+.formstyle select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.formstyle input[type="text"]:focus,
+.formstyle input[type="date"]:focus,
+.formstyle input[type="datetime"]:focus,
+.formstyle input[type="email"]:focus,
+.formstyle input[type="number"]:focus,
+.formstyle input[type="search"]:focus,
+.formstyle input[type="time"]:focus,
+.formstyle input[type="url"]:focus,
+.formstyle textarea:focus,
+.formstyle select:focus
+{
+    box-shadow: 0 0 5px #9999FF;
+    padding: 3%;
+    border: 1px solid #9999FF;
+}
+
+.formstyle input[type="submit"],
+.formstyle input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #0033cc;
+    border-bottom: 2px solid #0033cc;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.formstyle input[type="submit"]:hover,
+.formstyle input[type="button"]:hover{
+    background: #9999FF;
+}
+
+.formstyle-2{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 950px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+.formstyle-2 h1{
+    background: #FFE6FF;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #FFE6FF;
+    margin: -16px -16px 16px -16px;
+}
+.toppad{
+     padding-top: 15px;  
+     color:black;
+}
+.bg{
+background-color: #ffccff;
+}
+.toppad1{
+padding-top: 50px;
+}
+.nav ul{
+position:relative;
+top:40px;
+}
